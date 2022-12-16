@@ -28,6 +28,22 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <>
+      {/* <!-- Google tag (gtag.js) --> */}
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
+      />
+
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}', {
+        page_path: window.location.pathname,
+        });
+    `}
+      </Script>
       <Script src="https://accounts.google.com/gsi/client" />
 
       <Head>
