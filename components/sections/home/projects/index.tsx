@@ -1,6 +1,7 @@
 import { ArrowRightIcon, ExternalLinkIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const BGOverlay = ({ href }: { href: string }) => (
   <Link
@@ -8,11 +9,35 @@ const BGOverlay = ({ href }: { href: string }) => (
     aria-label="Erick Otieno E-Commerce Project"
     target="_blank"
     rel="noreferrer"
-    className="absolute top-0 left-0 z-20 w-full h-full bg-black bg-opacity-25 group hover:bg-opacity-70 duration-150 cursor-pointer rounded-md grid place-items-center"
+    className="absolute top-0 left-0 z-20 w-full h-full bg-black bg-opacity-25 group hover:bg-opacity-70 duration-150 cursor-pointer lg:rounded-md grid place-items-center"
   >
     <ArrowRightIcon className="w-8 text-white -rotate-45 group-hover:scale-105" />
   </Link>
 );
+
+const BlurImage = ({
+  styles,
+  src,
+  alt,
+}: {
+  styles: string;
+  src: string;
+  alt: string;
+}) => {
+  const [isLoading, setIsloading] = useState(true);
+
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      onLoadingComplete={() => setIsloading(false)}
+      className={`${styles} ${
+        isLoading ? 'scale-110 blur-md' : 'scale-100 blur-0'
+      }`}
+    />
+  );
+};
 
 const Projects = () => {
   return (
@@ -40,13 +65,13 @@ export default Projects;
 const ProjectEcommerce = () => (
   <div className="container mx-auto grid grid-cols-12 items-center">
     <div className="col-span-12 lg:col-span-5">
-      <div className="relative w-full lg:w-[115%] h-80 md:h-[28rem] md:rounded-md overflow-hidden shadow-xl group">
+      <div className="relative w-full lg:w-[115%] h-80 md:h-[28rem] lg:rounded-md overflow-hidden shadow-xl group">
         <BGOverlay href="https://shoppy-woocommerce.vercel.app/" />
-        <Image
-          src="/images/ecommerce-project.png"
-          alt="Project Gallaf"
-          fill
-          className="object-cover group-hover:scale-110 duration-200"
+
+        <BlurImage
+          src="/images/ecommerce.jpg"
+          alt="PJ"
+          styles="object-cover group-hover:scale-110 duration-200"
         />
       </div>
     </div>
@@ -118,13 +143,19 @@ const ProjectVidawa = () => (
     </div>
 
     <div className="col-span-12 lg:col-span-7">
-      <div className="relative w-full lg:w-[85%] ml-auto h-80 md:h-[28rem] md:rounded-md overflow-hidden mt-14 lg:mt-0 shadow-2xl md:rounded-tr-[2rem] md:rounded-bl-[2rem] group">
+      <div className="relative w-full lg:w-[85%] ml-auto h-80 md:h-[28rem] lg:rounded-md overflow-hidden mt-14 lg:mt-0 shadow-2xl lg:rounded-tr-[2rem] lg:rounded-bl-[2rem] group">
         <BGOverlay href="https://vidawa.top/" />
-        <Image
+        {/* <Image
           src="/images/vidawa.ai.jpg"
           alt="Erick Otieno Vidawa Project"
           fill
           className="object-cover group-hover:scale-110 duration-200"
+        /> */}
+
+        <BlurImage
+          src="/images/vidawa.ai.jpg"
+          alt="Erick Otieno Vidawa Project"
+          styles="object-cover group-hover:scale-110 duration-200"
         />
       </div>
     </div>
