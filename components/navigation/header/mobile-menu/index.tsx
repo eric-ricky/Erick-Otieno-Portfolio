@@ -19,14 +19,13 @@ const MobileMenu: React.FC<IMobileMenu> = ({ setMenuIsOpen }) => {
           key={index}
           className="list-none px-4 py-6"
         >
-          <Link href={item.link}>
-            <a
-              className={`${
-                router.asPath === item.link ? 'text-primary' : 'text-black'
-              } text-4xl text-center w-full rounded-md dark:text-gray-300 hover:text-primary focus:text-primary focus:outline-none dark:focus:bg-trueGray-700`}
-            >
-              {item.label}
-            </a>
+          <Link
+            href={item.link}
+            className={`${
+              router.asPath === item.link ? 'text-primary' : 'text-black'
+            } text-4xl text-center w-full rounded-md dark:text-gray-300 hover:text-primary focus:text-primary focus:outline-none dark:focus:bg-trueGray-700`}
+          >
+            {item.label}
           </Link>
         </li>
       ))}

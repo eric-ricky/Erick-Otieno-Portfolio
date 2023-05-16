@@ -31,16 +31,16 @@ const Hearder = () => {
           <div className="hidden lg:flex items-center">
             {navItems.map((item, index) => (
               <li className="mr-2" key={index}>
-                <Link href={item.link} prefetch={false}>
-                  <a
-                    className={`inline-block px-4 py-2 text-md font-medium no-underline rounded-md dark:text-gray-200 hover:text-teal-900 focus:text-teal-900 ${
-                      router.asPath === item.link
-                        ? 'text-teal-900'
-                        : 'text-gray-800'
-                    }`}
-                  >
-                    {item.label}
-                  </a>
+                <Link
+                  href={item.link}
+                  prefetch={false}
+                  className={`inline-block px-4 py-2 text-md font-medium no-underline rounded-md dark:text-gray-200 hover:text-teal-900 focus:text-teal-900 ${
+                    router.asPath === item.link
+                      ? 'text-teal-900'
+                      : 'text-gray-800'
+                  }`}
+                >
+                  {item.label}
                 </Link>
               </li>
             ))}
@@ -48,14 +48,14 @@ const Hearder = () => {
 
           {/* cta */}
           <div className="hidden lg:flex space-x-5">
-            <a
-              href="/files/erickresume.pdf"
+            <Link
+              href="/files/ERICK-OTIENO-RESUME.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2 bg-branddark text-white hover:opacity-70 rounded-md md:ml-5 flex items-center"
             >
               Resume
-            </a>
+            </Link>
           </div>
 
           {/* mobile humberger */}

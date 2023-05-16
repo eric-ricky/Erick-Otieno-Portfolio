@@ -1,127 +1,132 @@
-import { ExternalLinkIcon } from '@heroicons/react/outline';
+import { ArrowRightIcon, ExternalLinkIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
+import Link from 'next/link';
+
+const BGOverlay = ({ href }: { href: string }) => (
+  <Link
+    href={href}
+    aria-label="Erick Otieno E-Commerce Project"
+    target="_blank"
+    rel="noreferrer"
+    className="absolute top-0 left-0 z-20 w-full h-full bg-black bg-opacity-25 group hover:bg-opacity-70 duration-150 cursor-pointer rounded-md grid place-items-center"
+  >
+    <ArrowRightIcon className="w-8 text-white -rotate-45 group-hover:scale-105" />
+  </Link>
+);
 
 const Projects = () => {
   return (
     <section
       id="projects"
-      className="bg-gradient-to-r from-slate-100 via-white to-slate-100 dark:bg-slate-400 flex items-center py-20"
+      className="bg-gradient-to-r from-slate-100 via-white to-slate-100 dark:bg-slate-400 pt-20 pb-10"
     >
-      <div className="container mx-auto px-8 md:px-32 lg:px-56">
+      <div className="container mx-auto px-8 md:px-32">
         <div className="flex items-center space-x-2 pb-10">
-          <h2 className="headingsm md:headingsm">Some of my projects </h2>
+          <h2 className="headingsm md:headingsm">Recent projects </h2>
           <span className="bg-green-700 w-56 h-[0.02rem]"></span>
         </div>
+      </div>
 
-        <div className="flex flex-col space-y-16 w-full">
-          <div className="grid grid-cols-12 items-center w-full py-8 md:pb-20">
-            <div className="col-span-12 lg:col-span-5">
-              <div className="relative w-full lg:w-[115%] h-80 rounded-md overflow-hidden shadow-2xl rounded-tr-[2rem] rounded-bl-[2rem]">
-                <div className="absolute top-0 left-0 z-50 w-full h-full bg-[rgba(0,0,250,0.05)] hover:bg-[rgba(0,0,250,0.25)] cursor-pointer rounded-tr-[2rem] rounded-bl-[2rem]">
-                  .
-                </div>
-                <Image
-                  src="/images/gallaf.jpeg"
-                  alt="Project Gallaf"
-                  layout="fill"
-                  objectFit="cover"
-                  priority
-                  className="rounded-tr-[2rem] rounded-bl-[2rem]"
-                />
-              </div>
-            </div>
-
-            <div className="col-span-12 lg:col-span-7 z-50 mt-14 lg:mt-0">
-              <div className="text-right mb-4">
-                <p className="text-primary">Featured Project</p>
-                <p className="headingsm md:headingsm">Gallaf Marketplace</p>
-              </div>
-
-              <div className="bg-gradient-to-l from-slate-100 via-slate-100 to-slate-50 shadow-md p-8 rounded-md flex items-center space-x-4 w-full text-right">
-                A web-based marketplace that connects buyers and sellers of
-                freelance accounts. This platform provides a safe and secure way
-                for users to buy and sell these accounts, allowing them to
-                easily expand their business or find the right account for their
-                needs.
-              </div>
-
-              <div className="flex items-center justify-end space-x-4 mt-4 text-right">
-                <p className="text-gray-500">Firebase</p>
-                <p className="text-gray-500">Tailwindcss</p>
-                <p className="text-gray-500">ReactJS</p>
-                <p className="text-gray-500">NextJS</p>
-              </div>
-
-              <div className="flex justify-end mt-4">
-                <a
-                  href="https://gallaf.vercel.app/"
-                  aria-label="GitHub"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center space-x-2 cursor-pointer hover:underline"
-                >
-                  <ExternalLinkIcon className="h-6" />
-                  <span>Learn More</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-12 items-center w-full py-8">
-            <div className="col-span-12 lg:col-span-5 z-50">
-              <div className="w-full lg:w-[135%]">
-                <div className="mb-4">
-                  <p className="text-primary">Featured Project</p>
-                  <p className="headingsm md:headingsm">Cullen Networks</p>
-                </div>
-
-                <div className="bg-gradient-to-r from-slate-100 via-slate-100 to-slate-50 p-8 rounded-md flex items-center space-x-4 w-full text-left">
-                  A platform that provides an easy way for farmers and food
-                  providers to find and access the cold storage they need to
-                  preserve their crops and products, ensuring that they stay
-                  fresh and high-quality.
-                </div>
-
-                <div className="flex items-center space-x-4 mt-4">
-                  <p className="text-gray-500">Firebase</p>
-                  <p className="text-gray-500">Tailwindcss</p>
-                  <p className="text-gray-500">ReactJS</p>
-                  <p className="text-gray-500">NextJS</p>
-                </div>
-
-                <div className="flex mt-4">
-                  <a
-                    href="https://cullen-networks-providers-app.vercel.app/"
-                    aria-label="GitHub"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center space-x-2 cursor-pointer hover:underline"
-                  >
-                    <ExternalLinkIcon className="h-6" />
-                    <span>Learn More</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-span-12 lg:col-span-7">
-              <div className="relative w-full lg:w-[85%] ml-auto h-80 rounded-md overflow-hidden mt-14 lg:mt-0 shadow-2xl rounded-tr-[2rem] rounded-bl-[2rem]">
-                <div className="absolute top-0 left-0 z-20 w-full h-full bg-[rgba(0,0,250,0.05)] hover:bg-[rgba(0,0,250,0.25)] cursor-pointer rounded-tr-[2rem] rounded-bl-[2rem]"></div>
-                <Image
-                  src="/images/cullen.jpeg"
-                  alt="hero grocery"
-                  layout="fill"
-                  objectFit="cover"
-                  priority
-                  className="rounded-tr-[2rem] rounded-bl-[2rem]"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="flex flex-col space-y-24 w-full my-10">
+        <ProjectEcommerce />
+        <ProjectVidawa />
       </div>
     </section>
   );
 };
 
 export default Projects;
+
+const ProjectEcommerce = () => (
+  <div className="container mx-auto grid grid-cols-12 items-center">
+    <div className="col-span-12 lg:col-span-5">
+      <div className="relative w-full lg:w-[115%] h-80 md:h-[28rem] md:rounded-md overflow-hidden shadow-xl group">
+        <BGOverlay href="https://shoppy-woocommerce.vercel.app/" />
+        <Image
+          src="/images/ecommerce-project.png"
+          alt="Project Gallaf"
+          fill
+          className="object-cover group-hover:scale-110 duration-200"
+        />
+      </div>
+    </div>
+
+    <div className="col-span-12 lg:col-span-7 z-50 mt-14 lg:mt-0 px-8 md:px-0">
+      <div className="text-right mb-4">
+        <p className="text-rose-600">Featured Project</p>
+        <p className="headingsm md:headingsm">E-Commerce Application</p>
+      </div>
+
+      <div className="bg-rose-600 shadow-md p-5 md:p-8 rounded-md flex items-center space-x-4 w-full md:text-right">
+        <p className="text-rose-100 md:text-headingxs leading-normal md:leading-loose">
+          Experience seamless online shopping with the E-commerce Application,
+          showcasing my proficiency in developing robust and user-friendly
+          e-commerce platforms. This project incorporates essential features
+          like user authentication, product browsing and filtering, cart
+          functionality, placing orders, and order tracking.
+        </p>
+      </div>
+
+      <div className="flex justify-end mt-4">
+        <Link
+          href="https://shoppy-woocommerce.vercel.app/"
+          aria-label="Erick Otieno E-Commerce Project"
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center space-x-2 cursor-pointer hover:underline"
+        >
+          <ExternalLinkIcon className="h-6" />
+          <span>Visit Site</span>
+        </Link>
+      </div>
+    </div>
+  </div>
+);
+
+const ProjectVidawa = () => (
+  <div className="container mx-auto grid grid-cols-12 items-center w-full py-8">
+    <div className="col-span-12 lg:col-span-5 z-50 px-8 md:px-0">
+      <div className="w-full lg:w-[135%]">
+        <div className="mb-4">
+          <p className="text-rose-600">Featured Project</p>
+          <p className="headingsm md:headingsm">Vidawa - Virtual Dr</p>
+        </div>
+
+        <div className="bg-[#082f49] p-5 md:p-8 rounded-md flex items-center space-x-4 w-full text-left">
+          <p className="text-sky-100 md:text-headingxs leading-normal md:leading-loose">
+            Vidawa represents my passion for leveraging technology to enhance
+            the field of healthcare. With this project, I aimed to create a web
+            platform that provides personalized health advice comparable to that
+            of a human doctor, utilizing advanced AI models from OpenAI's API
+            endpoints.
+          </p>
+        </div>
+
+        <div className="flex mt-4">
+          <Link
+            href="https://vidawa.top/"
+            aria-label="Erick Otieno Vidawa Project"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center space-x-2 cursor-pointer hover:underline"
+          >
+            <ExternalLinkIcon className="h-6" />
+            <span>Visit Site</span>
+          </Link>
+        </div>
+      </div>
+    </div>
+
+    <div className="col-span-12 lg:col-span-7">
+      <div className="relative w-full lg:w-[85%] ml-auto h-80 md:h-[28rem] md:rounded-md overflow-hidden mt-14 lg:mt-0 shadow-2xl md:rounded-tr-[2rem] md:rounded-bl-[2rem] group">
+        <BGOverlay href="https://vidawa.top/" />
+        <Image
+          src="/images/vidawa.ai.jpg"
+          alt="Erick Otieno Vidawa Project"
+          fill
+          className="object-cover group-hover:scale-110 duration-200"
+        />
+      </div>
+    </div>
+  </div>
+);

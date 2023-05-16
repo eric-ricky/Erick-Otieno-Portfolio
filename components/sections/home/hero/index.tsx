@@ -38,18 +38,28 @@ const Hero = () => {
             <span className="text-gray-700">I build for the web.</span>
           </h1>
           <p className="body lg:w-[40%] mt-4">
-            I’m a front-end developer. I specialize in building responsive and
+            I’m a full-stack developer. I specialize in building responsive and
             dynamic websites that are both user friendly and visually appealing.
             I’m always looking for new challenges and opportunities to showcase
             my skills.
           </p>
 
           <div className="mt-8 flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0  md:items-center w-full z-50">
-            <Link href="#projects">
-              <a className="bg-[#001E00] py-2 px-4 hover:bg-slate-800 text-white rounded-md flex items-center space-x-2 w-fit">
-                <span>Some of my projects</span>
-                <ArrowRightIcon className="h-6" />
-              </a>
+            <Link
+              href="#projects"
+              className="bg-[#001E00] py-2 px-4 hover:bg-slate-800 text-white rounded-md flex items-center space-x-2 w-fit"
+            >
+              <span>Some of my projects</span>
+              <ArrowRightIcon className="h-6" />
+            </Link>
+
+            <Link
+              href="/files/ERICK-OTIENO-RESUME.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="md:hidden px-6 py-2 hover:opacity-70 rounded-md flex items-center"
+            >
+              Download Resume
             </Link>
           </div>
         </div>
